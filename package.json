@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "echo linting... && tslint \"**/*.ts\" -e \"node_modules/**\" -e \"**/out/**\"",
-    "prepublish": "cd 1 && typings install && typings prune",
+    "prepublish-v1": "cd 1 && typings install && typings prune",
+    "prepublish-v2": "cd 2 && typings install && typings prune",
+    "prepublish": "npm run prepublish-v1 && npm run prepublish-v2",
     "build-v1": "cd 1 && tsc -p . && typings bundle -o out/index.d.ts",
     "test-v1": "cd 1 && tsc -p test",
     "build-v2": "cd 2 && tsc -p . && typings bundle -o out/index.d.ts",
