@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "echo linting... && tslint \"**/*.ts\" -e \"node_modules/**\" -e \"**/out/**\"",
     "prepublish": "cd 1 && typings install && typings prune",
     "build-v1": "cd 1 && tsc -p . && typings bundle -o out/index.d.ts",
     "test-v1": "cd 1 && tsc -p test",
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/types/npm-async#readme",
   "devDependencies": {
+    "tslint": "^3.14.0",
+    "tslint-config-typings": "^0.2.3",
     "typescript": "^1.8.10",
     "typings": "^1.3.2"
   }
